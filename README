@@ -24,11 +24,11 @@ There are only two functions to know:
 
 where:
 
-- selector: an optional symbol with a HTML tag, identifier and classes specified with CSS syntax.
+- selector: an optional keyword with a HTML tag, identifier and classes specified with CSS syntax.
             If no selector is given or if no tag name is at the begining of the symbol, 'div' is assumed.
             Some examples: :p#myid.myclass1.myclass2, :p.myclass1, :p#myid, :#myid, :.myclass1
 - attributes: a optional map with keys and values for attributes names and values, e.g: {:href "/test.html"}
-- content: a form that will be evaluated and whose resulting value will be inserted in the tag.
+- content: a form or forms that will be evaluated and whose resulting value will be inserted in the tag.
 - /: a backslash that, if present, will generate a self-closed tag, e.g: (h= :br /) will be parsed to <br/>
 
 
