@@ -1,0 +1,38 @@
+<p>clj-haml is small template library for Clojure inspired in the Ruby template library <a href='http://haml.hamptoncatlin.com/'>Haml</a>.</p>
+
+<p>
+A Ruby Haml example could be:
+<pre>
+%div#things
+    %span#rice Chicken Fried
+    %p.beans{ :food => 'true' } The magical fruit
+    %h1.class.otherclass#id La La La
+</pre
+<br/>
+The equivalent clj-haml code would be:
+<pre>
+(h= :div#things
+             (h= :span#rice "Chicken Fried")
+             (h= :p.beans {:food "true"} "The magical fruit")
+             (h= :h1.class.otherclass#id "La La La"))
+</pre>
+</p>
+
+<p>
+There are only two functions to know:
+
+(h= :[selector] [attributes] [content] [/])
+
+where:
+<ul>
+<li><b>selector</b>: an optional symbol with a HTML tag, identifier and classes specified with CSS syntax. If no selector is given or if no tag name is at the begining of the symbol, 'div' is assumed. Some examples: :p#myid.myclass1.myclass2, :p.myclass1, :p#myid, :#myid, :.myclass1</li>
+<li><b>attributes</b>: a optional map with keys and values for attributes names and values, e.g: {:href "/test.html"}</li>
+<li><b>content</b>: a form that will be evaluated and whose resulting value will be inserted in the tag.</li>
+<li><b>/</b>: a backslash that, if present, will generate a self-closed tag, e.g: (h= :br /) will be parsed to &lt;br/%gt;
+</ul>
+</p>
+
+The other function is (h-file path), that will load the file at the path parameter and load it.
+</p>
+
+<p>Some tests are included in the source file.</p>
