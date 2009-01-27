@@ -1,4 +1,4 @@
-clj-haml is small template library for Clojure inspired in the Ruby template library Haml (http://haml.hamptoncatlin.com/).
+clj-haml is small HTML template library for Clojure inspired in the Ruby template library Haml (http://haml.hamptoncatlin.com/).
 
 
 A Ruby Haml example could be:
@@ -32,7 +32,7 @@ where:
 - /: a backslash that, if present, will generate a self-closed tag, e.g: (h= :br /) will be parsed to <br/>
 
 
-The other function is (h-file path), that will load the file at the path parameter and load it.
+The other function is (h-file path), that will load the file at the path parameter.
 
 
 Some tests are included in the source file.
