@@ -1,4 +1,4 @@
-clj-haml is small HTML template library for Clojure inspired in the Ruby template library Haml (http://haml.hamptoncatlin.com/).
+clj-haml is small HTML template library for Clojure inspired by the Ruby template library Haml (http://haml.hamptoncatlin.com/).
 
 
 A Ruby Haml example could be:
@@ -18,7 +18,7 @@ The equivalent clj-haml code would be:
 
 
 
-There are most relevant function is h=:
+There most relevant function is h=:
 
 (h= :[selector] [attributes] [content] [/])
 
@@ -41,9 +41,10 @@ Other functions are
     - (!!! 1.1) -> "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 Transitional//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
     - (!!! Strict) -> "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
     - (!!! :xml "iso-8859-15") -> "<?xml version='1.0' encoding='iso-8859-1' ?>"
--(with-haml-template path :format [bindings-list]), Looks for a templat file ending with path.format.haml, and parses the template using the optional bindings list for the
-    vars in the template. For instance: (with-haml-template "/my/path/to/template" :html [vara 12 varb "foo"]) will parse the file /my/path/to/template.html.haml with bindings
-    vara = 12 and varb = "foo".
+-(with-haml-template path :format [bindings-list]), Looks for a templat file ending with path.format.haml,
+    and parses the template using the optional bindings list for the vars in the template. For instance:
+    (with-haml-template "/my/path/to/template" :html [vara 12 varb "foo"]) will parse the file
+    /my/path/to/template.html.haml with bindings vara = 12 and varb = "foo".
 
 
 Some tests are included in the source file.
