@@ -18,7 +18,7 @@ The equivalent clj-haml code would be:
 
 
 
-There are only two functions to know:
+There are most relevant function is h=:
 
 (h= :[selector] [attributes] [content] [/])
 
@@ -32,7 +32,18 @@ where:
 - /: a backslash that, if present, will generate a self-closed tag, e.g: (h= :br /) will be parsed to <br/>
 
 
-The other function is (h-file path), that will load the file at the path parameter.
+Other functions are
+
+- (h-file path), that will load the file at the path parameter.
+- (!!! [:options] [forms]) will insert a document prolog, and then process the rest of optionals forms. Some options are available:
+    - (!!!) -> "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+    - (!!! :xml) -> "<?xml version='1.0' encoding='utf-8' ?>"
+    - (!!! 1.1) -> "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1 Transitional//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+    - (!!! Strict) -> "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+    - (!!! :xml "iso-8859-15") -> "<?xml version='1.0' encoding='iso-8859-1' ?>"
+-(with-haml-template path :format [bindings-list]), Looks for a templat file ending with path.format.haml, and parses the template using the optional bindings list for the
+    vars in the template. For instance: (with-haml-template "/my/path/to/template" :html [vara 12 varb "foo"]) will parse the file /my/path/to/template.html.haml with bindings
+    vara = 12 and varb = "foo".
 
 
 Some tests are included in the source file.
