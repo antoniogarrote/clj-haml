@@ -111,7 +111,7 @@
                         (let [this-key (first attr-keys)
                               this-val (get attrs this-key)]
                           (recur (rest attr-keys)
-                                 (str acum " " (keyword-to-string this-key) "='" this-val "'")))
+                                 (str acum " " (keyword-to-string this-key) "='" (eval this-val) "'")))
                         acum)))]
        (if self-closed?
          (str pre "/>")
@@ -144,8 +144,8 @@
 (deftest test-3
   (is (= (h= :head {:name "doc_head"}
              (h= :script {:type (str "text/" "javascript")
-                          :src (str "javscripts/script" (+ 2 7))})))
-      "<head name='doc_head'><script src='/docs/rdoc/javascripts/script_9' type='text/javascript'></script></head>"))
+                          :src (str "/docs/rdoc/javascripts/script_" (+ 2 7))}))
+      "<head name='doc_head'><script src='/docs/rdoc/javascripts/script_9' type='text/javascript'></script></head>")))
 
 (deftest test-4
   (is (= (h= :sandwich {:bread "whole wheat"} /)
