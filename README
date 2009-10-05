@@ -1,5 +1,18 @@
 clj-haml is small HTML template library for Clojure inspired by the Ruby template library Haml (http://haml.hamptoncatlin.com/).
 
+== Installation
+
+- Set up Clojure POM (http://github.com/technomancy/clojure-pom)
+- Clone the project
+- Compile, test, install with maven:
+
+mvn process-resources ; # <- now your are ready for emacs slime
+mvn compile           ; # <- see it compile your clojure code
+mvn test              ; # <- see it test your clojure code
+mvn install           ; # <- install a jar for other components
+mvn assembly:assembly ; # <- build one big jar
+
+== Use
 
 A Ruby Haml example could be:
 
@@ -12,9 +25,9 @@ A Ruby Haml example could be:
 The equivalent clj-haml code would be:
 
 (h= :div#things
-             (h= :span#rice "Chicken Fried")
-             (h= :p.beans {:food "true"} "The magical fruit")
-             (h= :h1.class.otherclass#id "La La La"))
+        (h= :span#rice "Chicken Fried")
+        (h= :p.beans {:food "true"} "The magical fruit")
+        (h= :h1.class.otherclass#id "La La La"))
 
 
 
@@ -47,4 +60,11 @@ Other functions are
     /my/path/to/template.html.haml with bindings vara = 12 and varb = "foo".
 
 
-Some tests are included in the source file.
+== Tests
+
+Some tests are included in the source file. You can run them with the command 'mvn test'
+
+== Changelog
+
+- version 0.1  (02/28/2009): First version.
+- version 0.2  (10/05/2009): Updated to last version of clojure. Clojure POM ready.
