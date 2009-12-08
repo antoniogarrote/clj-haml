@@ -2,15 +2,26 @@ clj-haml is small HTML template library for Clojure inspired by the Ruby templat
 
 == Installation
 
-- Set up Clojure POM (http://github.com/technomancy/clojure-pom)
-- Clone the project
-- Compile, test, install with maven:
+- clj-haml now uses Leiningen as a bulding tool and Clojars to manage the jar dependencies.
+  Take a look at http://clojars.org/ and http://github.com/technomancy/leiningen for more
+  information.
+- clj-haml can be used with maven from the following repository clojars repository, take a look
+  at the included POM file.
 
-mvn process-resources ; # <- now your are ready for emacs slime
-mvn compile           ; # <- see it compile your clojure code
-mvn test              ; # <- see it test your clojure code
-mvn install           ; # <- install a jar for other components
-mvn assembly:assembly ; # <- build one big jar
+<dependency>
+  <groupId>clj-haml</groupId>
+  <artifactId>clj-haml</artifactId>
+  <version>0.2.1-SNAPSHOT</version>
+</dependency>
+
+- The Leiningen dependecy can be included in you leiningen project with the following dep:
+
+[clj-haml "0.2.1-SNAPSHOT"]
+
+- if you have installed Leiningen you can build and test clj-haml with the following commands:
+
+$lein compile
+$lein test
 
 == Use
 
@@ -66,5 +77,6 @@ Some tests are included in the source file. You can run them with the command 'm
 
 == Changelog
 
-- version 0.1  (02/28/2009): First version.
-- version 0.2  (10/05/2009): Updated to last version of clojure. Clojure POM ready.
+- version 0.1.0  (02/28/2009): First version.
+- version 0.2.0  (10/05/2009): Updated to last version of clojure. Clojure POM ready.
+- version 0.2.1  (10/05/2009): Updated to Leiningen and clojars infrastrcture.

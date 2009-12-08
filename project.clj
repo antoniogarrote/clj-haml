@@ -1,0 +1,1 @@
+(defproject clj-haml "0.2.1-SNAPSHOT" :description "#haml style template library for Clojure" :dependencies [[org.clojure/clojure "1.1.0-alpha-SNAPSHOT"] [org.clojure/clojure-contrib "1.0-SNAPSHOT"]])
